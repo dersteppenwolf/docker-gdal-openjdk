@@ -1,7 +1,8 @@
 # docker-gdal-openjdk
 
 Alpine Based Docker image with GDAL and Java.
-Designed to use as a base for a dockerized Geoserver including the OGR based WFS Output Format extension (https://docs.geoserver.org/stable/en/user/extensions/ogr.html)
+
+Designed to be used as a base for a dockerized Geoserver including the OGR based WFS Output Format extension (https://docs.geoserver.org/stable/en/user/extensions/ogr.html)
 
 ## Supported tags
 
@@ -14,7 +15,7 @@ Build:
 ```bash
 docker build -t dersteppen/docker-gdal-openjdk .
 docker images dersteppen/docker-gdal-openjdk
-docker tag xxxxx dersteppen/docker-gdal-openjdk:gdal_3.0.2_java_11.0.5
+docker tag 9ee90e4f5e71 dersteppen/docker-gdal-openjdk:gdal_3.0.2_java_11.0.5
 ```
 
 Push image to dockerhub:
