@@ -6,7 +6,8 @@ Designed to be used as a base for a dockerized Geoserver including the OGR based
 
 ## Supported tags
 
-* `gdal_3.0.2_java_11.0.5`,  `latest`
+* `gdal_3.1.2_java_11.0.5`,  `latest`
+* `gdal_3.0.2_java_11.0.5`
 
 ## Build container
 
@@ -15,12 +16,12 @@ Build:
 ```bash
 docker build -t dersteppen/docker-gdal-openjdk .
 docker images dersteppen/docker-gdal-openjdk
-docker tag 9ee90e4f5e71 dersteppen/docker-gdal-openjdk:gdal_3.0.2_java_11.0.5
+docker tag d55f6c3cfdb4 dersteppen/docker-gdal-openjdk:gdal_3.1.2_java_11.0.5
 ```
 
 Push image to dockerhub:
 
-    docker push dersteppen/docker-gdal-openjdk:gdal_3.0.2_java_11.0.5
+    docker push dersteppen/docker-gdal-openjdk:gdal_3.1.2_java_11.0.5
 
 
 ## Usage example
@@ -48,6 +49,9 @@ List Supported raster formats:
 Execute GDAL:
 
     docker run --rm -v /home:/home dersteppen/docker-gdal-openjdk gdalinfo $PWD/my.tif
+
+    docker run --rm -v /home:/home dersteppen/docker-gdal-openjdk ogrinfo /home/example.gpkg
+
 
 
 ## Contributing

@@ -1,20 +1,19 @@
 ###########################################################################################################
-FROM osgeo/gdal:alpine-normal-3.0.2
+FROM osgeo/gdal:alpine-normal-3.1.2
 LABEL maintainer="juan@gkudos.com"
 ###########################################################################################################
 ENV JAVA_VERSION jdk-11.0.5+10
 
 WORKDIR /tmp
 
-RUN apk add zip curl nss openssl && \
-    apk add libressl2.7-libcrypto 
+RUN apk add zip curl nss openssl 
 
 ###########################################################################################################
 ## Java (from https://github.com/AdoptOpenJDK/openjdk-docker/blob/master/11/jre/alpine/Dockerfile.hotspot.releases.full )
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
 RUN apk add --no-cache --virtual .build-deps curl binutils \
-    && GLIBC_VER="2.29-r0" \
+    && GLIBC_VER="2.31-r0" \
     && ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" \
     && GCC_LIBS_URL="https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-9.1.0-2-x86_64.pkg.tar.xz" \
     && GCC_LIBS_SHA256="91dba90f3c20d32fcf7f1dbe91523653018aa0b8d2230b00f822f6722804cf08" \
